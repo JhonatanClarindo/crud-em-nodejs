@@ -58,7 +58,7 @@ server.use(adminBroOptions.options.rootPath, router);
 // =============================================
 // Run App
 const run = async () => {
-  await mongoose.connect("mongodb+srv://jhonatan:1234@cluster0.dqpl4.mongodb.net/adminbro?retryWrites=true&w=majority", {
+  await mongoose.connect(process.env.MONGO_DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
